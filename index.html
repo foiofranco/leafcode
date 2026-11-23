@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>LEAF</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%3E%3Crect%20width=%2224%22%20height=%2224%22%20rx=%226%22%20fill=%22%23090D0A%22/%3E%3Cg%20fill=%22none%22%20stroke=%22%2300FF66%22%20stroke-width=%222.1%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%20transform=%22translate(12%2012)%20scale(1.12)%20translate(-12%20-12)%22%3E%3Cpath%20d=%22M5%2019C5%2010%2010%205%2020%204c0%2010-4%2015-13%2015%22/%3E%3Cpath%20d=%22M5%2019%2014%2010%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { neon: '#00FF66', neon2: '#00E65B', leaf: '#0A2E14', ink: '#090D0A', surface: '#0B0F0C', mute: '#A1A1AA' },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+        }
+      }
+    }
+  };
+</script>
+<style>
+  /* Layout: single-column flow with a two-column hero (copy + IDE card). Foliage SVGs frame section edges; neon is the only accent. */
+  :root {
+    --bg: #090D0A;
+    --surface: #0B0F0C;
+    --leaf: #0A2E14;
+    --neon: #00FF66;
+    --neon-2: #00E65B;
+    --fg: #FFFFFF;
+    --muted: #A1A1AA;
+    --line: rgba(16, 185, 129, 0.2);
+    --glow: 0 0 24px rgba(0, 255, 102, 0.45), 0 0 60px rgba(0, 255, 102, 0.18);
+    color-scheme: dark;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--fg); font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+  h1, h2, h3 { text-wrap: balance; font-family: "Space Grotesk", Inter, system-ui, sans-serif; letter-spacing: -0.02em; }
+  :focus-visible { outline: 2px solid var(--neon); outline-offset: 3px; border-radius: 8px; }
+  ::selection { background: rgba(0, 255, 102, 0.3); }
+
+  .wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .section { position: relative; padding-block: 96px; }
+  .eyebrow { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--neon); }
+  .glass { background: rgba(10, 46, 20, 0.22); border: 1px solid var(--line); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; padding: 12px 22px; font-weight: 600; font-size: 15px; transition: box-shadow .25s, transform .25s, background .25s, border-color .25s; white-space: nowrap; }
+  .btn-primary { background: var(--neon); color: #03140A; box-shadow: 0 0 0 rgba(0,255,102,0); }
+  .btn-primary:hover { box-shadow: var(--glow); transform: translateY(-1px); }
+  .btn-outline { border: 1px solid rgba(0, 255, 102, 0.55); color: var(--neon); background: rgba(0, 255, 102, 0.03); }
+  .btn-outline:hover { background: rgba(0, 255, 102, 0.1); box-shadow: 0 0 28px rgba(0, 255, 102, 0.22); transform: translateY(-1px); }
+
+  /* Header */
+  .nav-link { color: var(--muted); font-size: 14px; transition: color .2s; }
+  .nav-link:hover { color: var(--fg); }
+
+  /* Background grid + glows */
+  .grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,102,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,102,.06) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 75%); pointer-events: none; }
+  .orb { position: absolute; border-radius: 9999px; filter: blur(90px); pointer-events: none; }
+  #matrix { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .16; pointer-events: none; -webkit-mask-image: linear-gradient(#000 40%, transparent); mask-image: linear-gradient(#000 40%, transparent); }
+
+  /* Foliage */
+  .foliage { position: absolute; pointer-events: none; opacity: .5; transform-origin: 50% 100%; animation: sway 9s ease-in-out infinite alternate; }
+  .foliage.flip { transform: scaleX(-1); animation-name: sway-flip; }
+  @keyframes sway { from { transform: rotate(-1.6deg); } to { transform: rotate(1.8deg); } }
+  @keyframes sway-flip { from { transform: scaleX(-1) rotate(-1.6deg); } to { transform: scaleX(-1) rotate(1.8deg); } }
+  .foliage-mask { -webkit-mask-image: linear-gradient(to top, #000 55%, transparent); mask-image: linear-gradient(to top, #000 55%, transparent); }
+
+  /* Hero entrance */
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .rise { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+  .d1 { animation-delay: .08s; } .d2 { animation-delay: .18s; } .d3 { animation-delay: .28s; } .d4 { animation-delay: .4s; }
+
+  /* Scroll reveal (slide only, content stays visible at rest) */
+  .reveal { transform: translateY(18px); transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { transform: none; }
+
+  /* IDE card */
+  .ide { background: rgba(7, 12, 9, 0.82); border: 1px solid rgba(0,255,102,.28); box-shadow: 0 0 0 1px rgba(0,255,102,.05), 0 0 80px rgba(0,255,102,.16), 0 30px 80px rgba(0,0,0,.6); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .ide pre { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; line-height: 1.75; overflow-x: auto; margin: 0; }
+  .tab { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--muted); padding: 10px 14px; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s, background .2s; white-space: nowrap; }
+  .tab:hover { color: var(--fg); }
+  .tab[aria-selected="true"] { color: var(--neon); border-bottom-color: var(--neon); background: rgba(0,255,102,.05); }
+  .c-k { color: #00FF66; } .c-s { color: #8DF5B5; } .c-c { color: #5B6B60; } .c-p { color: #E4E4E7; } .c-n { color: #F5D78A; } .c-m { color: #A1A1AA; }
+  .caret { display: inline-block; width: 8px; height: 15px; background: var(--neon); vertical-align: -2px; animation: blink 1.1s steps(1) infinite; box-shadow: 0 0 10px var(--neon); }
+  @keyframes blink { 50% { opacity: 0; } }
+  .float { animation: float 6s ease-in-out infinite alternate; }
+  @keyframes float { from { transform: translateY(0); } to { transform: translateY(-8px); } }
+
+  /* Service cards */
+  .card { position: relative; border-radius: 20px; padding: 28px; overflow: hidden; transition: border-color .3s, box-shadow .3s, transform .3s; }
+  .card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 0%), rgba(0,255,102,.16), transparent 60%); opacity: 0; transition: opacity .3s; pointer-events: none; }
+  .card:hover { border-color: rgba(0,255,102,.55); box-shadow: 0 0 40px rgba(0,255,102,.14); transform: translateY(-4px); }
+  .card:hover::before { opacity: 1; }
+  .icon-box { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; border: 1px solid rgba(0,255,102,.35); background: rgba(0,255,102,.06); color: var(--neon); box-shadow: inset 0 0 18px rgba(0,255,102,.08); }
+  .icon-box svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 4px rgba(0,255,102,.6)); }
+
+  /* Marquee */
+  .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .track { display: flex; gap: 12px; width: max-content; animation: scroll 38s linear infinite; }
+  .track.rev { animation-direction: reverse; animation-duration: 46s; }
+  .marquee:hover .track { animation-play-state: paused; }
+  @keyframes scroll { to { transform: translateX(calc(-50% - 6px)); } }
+  .chip { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 14px; border: 1px solid var(--line); background: rgba(10,46,20,.25); font-weight: 500; font-size: 15px; color: #E4E4E7; transition: border-color .2s, box-shadow .2s; }
+  .chip:hover { border-color: rgba(0,255,102,.5); box-shadow: 0 0 22px rgba(0,255,102,.15); }
+  .mono-badge { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; font: 600 11px "JetBrains Mono", monospace; color: var(--neon); border: 1px solid rgba(0,255,102,.35); background: rgba(0,255,102,.07); }
+
+  /* Case visuals */
+  .case-art { height: 180px; border-radius: 14px; position: relative; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(160deg, rgba(10,46,20,.7), rgba(9,13,10,.9)); }
+
+  /* Form */
+  .field { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: rgba(9,13,10,.7); padding: 13px 14px; color: var(--fg); font-size: 15px; transition: border-color .2s, box-shadow .2s; }
+  .field::placeholder { color: #71717A; }
+  .field:focus { outline: none; border-color: rgba(0,255,102,.7); box-shadow: 0 0 0 3px rgba(0,255,102,.15), 0 0 24px rgba(0,255,102,.15); }
+
+  @media (max-width: 640px) { .section { padding-block: 72px; } .ide pre { font-size: 12px; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .foliage, .float, .caret, .rise { animation: none !important; }
+    .track { animation: none !important; flex-wrap: wrap; width: auto; justify-content: center; }
+    .track [aria-hidden="true"] { display: none; }
+    .reveal { transform: none; transition: none; }
+  }
+</style>
+
+<!-- Folhagem reutilizável -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="leaf-shape" d="M0 0C6-13 26-15 40 0C26 15 6 13 0 0Z"/>
+    <g id="branch" fill="rgba(0,255,102,.07)" stroke="#00E65B" stroke-width="1.2" stroke-linejoin="round">
+      <path d="M100 640C92 520 114 400 98 280C90 200 108 120 106 30" fill="none" stroke-linecap="round"/>
+      <use href="#leaf-shape" transform="translate(97 560) rotate(200) scale(2.2)"/>
+      <use href="#leaf-shape" transform="translate(98 540) rotate(-22) scale(2.1)"/>
+      <use href="#leaf-shape" transform="translate(104 470) rotate(205) scale(2)"/>
+      <use href="#leaf-shape" transform="translate(106 450) rotate(-18) scale(1.9)"/>
+      <use href="#leaf-shape" transform="translate(110 380) rotate(198) scale(1.75)"/>
+      <use href="#leaf-shape" transform="translate(108 362) rotate(-24) scale(1.7)"/>
+      <use href="#leaf-shape" transform="translate(100 290) rotate(206) scale(1.5)"/>
+      <use href="#leaf-shape" transform="translate(99 272) rotate(-20) scale(1.45)"/>
+      <use href="#leaf-shape" transform="translate(100 200) rotate(200) scale(1.2)"/>
+      <use href="#leaf-shape" transform="translate(104 184) rotate(-26) scale(1.15)"/>
+      <use href="#leaf-shape" transform="translate(106 110) rotate(204) scale(.95)"/>
+      <use href="#leaf-shape" transform="translate(107 96) rotate(-22) scale(.9)"/>
+      <use href="#leaf-shape" transform="translate(106 34) rotate(-80) scale(.8)"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- HEADER -->
+<header class="sticky z-50 border-b border-emerald-500/15 bg-[#090D0A]/75 backdrop-blur-md" style="top: env(safe-area-inset-top, 0px)">
+  <div class="wrap flex h-16 items-center justify-between gap-4">
+    <a href="#topo" class="flex items-center gap-2.5" aria-label="LEAF, início">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF66" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 6px rgba(0,255,102,.7))" aria-hidden="true"><path d="M5 19C5 10 10 5 20 4c0 10-4 15-13 15"/><path d="M5 19 14 10"/></svg>
+      <span class="font-display text-[22px] font-bold tracking-tight">LEAF</span>
+    </a>
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Principal">
+      <a class="nav-link" href="#servicos">Serviços</a>
+      <a class="nav-link" href="#sobre">Sobre</a>
+      <a class="nav-link" href="#tecnologias">Tecnologias</a>
+      <a class="nav-link" href="#portfolio">Portfólio/Cases</a>
+      <a class="nav-link" href="#contato">Contato</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="#contato" class="btn btn-primary hidden !py-2.5 sm:inline-flex">Iniciar Projeto</a>
+      <button id="menu-btn" class="grid h-11 w-11 place-items-center rounded-xl border border-emerald-500/25 md:hidden" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00FF66" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="menu" hidden class="border-t border-emerald-500/15 md:hidden">
+    <nav class="wrap flex flex-col py-3" aria-label="Menu móvel">
+      <a class="py-3 text-[15px] text-zinc-300" href="#servicos">Serviços</a>
+      <a class="py-3 text-[15px] text-zinc-300" href="#sobre">Sobre</a>
+      <a class="py-3 text-[15px] text-zinc-300" href="#tecnologias">Tecnologias</a>
+      <a class="py-3 text-[15px] text-zinc-300" href="#portfolio">Portfólio/Cases</a>
+      <a class="py-3 text-[15px] text-zinc-300" href="#contato">Contato</a>
+      <a class="btn btn-primary mt-2" href="#contato">Iniciar Projeto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="grid-bg"></div>
+    <div class="orb" style="width:520px;height:520px;left:-160px;top:-120px;background:rgba(10,46,20,.9)"></div>
+    <div class="orb" style="width:420px;height:420px;right:-120px;top:120px;background:rgba(0,255,102,.12)"></div>
+
+    <div class="wrap relative grid items-center gap-14 pb-24 pt-16 lg:grid-cols-[1.02fr_1fr] lg:pb-28 lg:pt-24">
+      <div class="min-w-0">
+        <div class="rise inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/5 px-3.5 py-1.5 text-[13px] text-emerald-200/90">
+          <span class="h-1.5 w-1.5 rounded-full bg-neon" style="box-shadow:0 0 10px #00FF66"></span>
+          Seja bem-vindo(a) à LEAF!
+        </div>
+        <h1 class="rise d1 mt-6 text-[40px] font-bold leading-[1.04] sm:text-6xl lg:text-[64px]">
+          Onde ideias <span class="text-neon" style="text-shadow:0 0 28px rgba(0,255,102,.55)">florescem</span> em software de alto impacto.
+        </h1>
+        <p class="rise d2 mt-6 max-w-xl text-[17px] leading-relaxed text-mute">
+          Criamos produtos digitais sob medida, com engenharia moderna, design cuidadoso e entrega contínua. Do primeiro protótipo à operação em escala, o seu software cresce de forma saudável.
+        </p>
+        <div class="rise d3 mt-9 flex flex-col gap-3 sm:flex-row">
+          <a href="#contato" class="btn btn-primary">Solicitar Orçamento
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#portfolio" class="btn btn-outline">Ver Nosso Portfólio</a>
+        </div>
+        <ul class="rise d4 mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm text-mute">
+          <li class="flex items-center gap-2"><span class="text-neon">&#10003;</span> Código limpo e testado</li>
+          <li class="flex items-center gap-2"><span class="text-neon">&#10003;</span> Entregas a cada ciclo</li>
+          <li class="flex items-center gap-2"><span class="text-neon">&#10003;</span> Você é dono do código</li>
+        </ul>
+      </div>
+
+      <!-- IDE / Terminal -->
+      <div class="rise d3 relative min-w-0">
+        <div class="absolute -inset-6 rounded-[32px] bg-neon/10 blur-3xl" aria-hidden="true"></div>
+        <div class="ide relative overflow-hidden rounded-2xl">
+          <div class="flex items-center justify-between border-b border-emerald-500/15 px-4">
+            <div class="flex items-center gap-1.5 py-3" aria-hidden="true">
+              <span class="h-3 w-3 rounded-full bg-[#2a3a2f]"></span><span class="h-3 w-3 rounded-full bg-[#2a3a2f]"></span><span class="h-3 w-3 rounded-full bg-neon/80" style="box-shadow:0 0 8px #00FF66"></span>
+            </div>
+            <div role="tablist" aria-label="Arquivos do projeto" class="flex overflow-x-auto">
+              <button class="tab" role="tab" id="t-0" aria-selected="true" aria-controls="p-0">leaf.config.ts</button>
+              <button class="tab" role="tab" id="t-1" aria-selected="false" aria-controls="p-1" tabindex="-1">api/projetos.ts</button>
+              <button class="tab" role="tab" id="t-2" aria-selected="false" aria-controls="p-2" tabindex="-1">deploy.log</button>
+            </div>
+          </div>
+          <div class="p-5">
+            <div role="tabpanel" id="p-0" aria-labelledby="t-0"><pre><code><span class="c-c">// como o seu projeto cresce com a LEAF</span>
+<span class="c-k">const</span> <span class="c-p">leaf</span> = {
+  <span class="c-p">projeto</span>: <span class="c-s">"seu-produto"</span>,
+  <span class="c-p">stack</span>: [<span class="c-s">"next"</span>, <span class="c-s">"typescript"</span>, <span class="c-s">"postgres"</span>],
+  <span class="c-p">metodo</span>: {
+    <span class="c-p">ciclo</span>: <span class="c-s">"2 semanas"</span>,
+    <span class="c-p">entrega</span>: <span class="c-s">"continua"</span>,
+    <span class="c-p">testes</span>: <span class="c-n">true</span>,
+  },
+  <span class="c-p">nuvem</span>: { <span class="c-p">provedor</span>: <span class="c-s">"aws"</span>, <span class="c-p">escala</span>: <span class="c-s">"automatica"</span> },
+};
+
+<span class="c-k">export default</span> <span class="c-p">leaf</span>;<span class="caret"></span></code></pre></div>
+            <div role="tabpanel" id="p-1" aria-labelledby="t-1" hidden><pre><code><span class="c-k">export async function</span> <span class="c-p">GET</span>(<span class="c-p">req</span>: <span class="c-p">Request</span>) {
+  <span class="c-k">const</span> { <span class="c-p">searchParams</span> } = <span class="c-k">new</span> <span class="c-p">URL</span>(<span class="c-p">req</span>.<span class="c-p">url</span>);
+  <span class="c-k">const</span> <span class="c-p">status</span> = <span class="c-p">searchParams</span>.<span class="c-p">get</span>(<span class="c-s">"status"</span>) ?? <span class="c-s">"ativo"</span>;
+
+  <span class="c-k">const</span> <span class="c-p">projetos</span> = <span class="c-k">await</span> <span class="c-p">db</span>.<span class="c-p">projeto</span>.<span class="c-p">findMany</span>({
+    <span class="c-p">where</span>: { <span class="c-p">status</span> },
+    <span class="c-p">orderBy</span>: { <span class="c-p">atualizadoEm</span>: <span class="c-s">"desc"</span> },
+  });
+
+  <span class="c-k">return</span> <span class="c-p">Response</span>.<span class="c-p">json</span>(<span class="c-p">projetos</span>);
+}</code></pre></div>
+            <div role="tabpanel" id="p-2" aria-labelledby="t-2" hidden><pre><code><span class="c-m">$</span> <span class="c-p">leaf deploy --ambiente producao</span>
+<span class="c-k">&#10003;</span> <span class="c-p">dependencias instaladas</span>
+<span class="c-k">&#10003;</span> <span class="c-p">testes: 142 passaram</span>
+<span class="c-k">&#10003;</span> <span class="c-p">build otimizado</span>
+<span class="c-k">&#10003;</span> <span class="c-p">migracoes aplicadas</span>
+<span class="c-k">&#10003;</span> <span class="c-p">deploy sem downtime</span>
+
+<span class="c-k">LEAF</span> <span class="c-p">no ar.</span> <span class="c-c">tudo saudavel</span><span class="caret"></span></code></pre></div>
+          </div>
+          <div class="flex items-center justify-between border-t border-emerald-500/15 px-4 py-2 font-mono text-[11px] text-mute">
+            <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-neon" style="box-shadow:0 0 8px #00FF66"></span> online</span>
+            <span>main &nbsp;·&nbsp; TypeScript &nbsp;·&nbsp; UTF-8</span>
+          </div>
+        </div>
+        <div class="float glass absolute -bottom-6 left-3 hidden rounded-xl px-4 py-3 sm:block" style="box-shadow:0 0 30px rgba(0,255,102,.18)">
+          <div class="font-mono text-[11px] uppercase tracking-widest text-mute">Build</div>
+          <div class="mt-0.5 flex items-center gap-2 text-sm font-semibold text-neon"><span>&#10003;</span> aprovado em 1,2 s</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="section">
+    <div class="orb" style="width:480px;height:480px;right:-200px;top:40px;background:rgba(10,46,20,.8)"></div>
+    <div class="wrap relative">
+      <div class="reveal max-w-2xl">
+        <p class="eyebrow">Serviços</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Tecnologia que se adapta ao seu negócio.</h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-mute">Quatro frentes que se conectam: do desenho da experiência à infraestrutura que mantém tudo de pé.</p>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2">
+        <article class="card glass reveal">
+          <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9.5 8.5-2 2 2 2M14.5 8.5l2 2-2 2"/></svg></div>
+          <h3 class="mt-6 text-xl font-semibold">Desenvolvimento Web e Mobile sob medida</h3>
+          <p class="mt-3 leading-relaxed text-mute">Aplicações web, PWAs e apps nativos construídos para o seu processo, com arquitetura limpa e fácil de evoluir.</p>
+          <p class="mt-5 font-mono text-xs text-emerald-300/70">React · Next.js · React Native</p>
+        </article>
+        <article class="card glass reveal">
+          <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A6 6 0 0 1 18 9.5a4.25 4.25 0 0 1-.5 8.5Z"/><path d="M12 12v5m0 0-2-2m2 2 2-2"/></svg></div>
+          <h3 class="mt-6 text-xl font-semibold">Arquitetura em Nuvem</h3>
+          <p class="mt-3 leading-relaxed text-mute">Infraestrutura segura, observável e elástica. Migração, containers, CI/CD e custos sob controle.</p>
+          <p class="mt-5 font-mono text-xs text-emerald-300/70">AWS · Docker · Terraform</p>
+        </article>
+        <article class="card glass reveal">
+          <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/><path d="M10.5 12h3"/></svg></div>
+          <h3 class="mt-6 text-xl font-semibold">I.A. &amp; Automação</h3>
+          <p class="mt-3 leading-relaxed text-mute">Assistentes, integrações com modelos de linguagem e automação de rotinas para liberar o tempo da sua equipe.</p>
+          <p class="mt-5 font-mono text-xs text-emerald-300/70">Python · LLMs · Workflows</p>
+        </article>
+        <article class="card glass reveal">
+          <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 2-.8 2-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></div>
+          <h3 class="mt-6 text-xl font-semibold">UI/UX Design</h3>
+          <p class="mt-3 leading-relaxed text-mute">Pesquisa, protótipos e sistemas de design que tornam o produto claro de usar e consistente em cada tela.</p>
+          <p class="mt-5 font-mono text-xs text-emerald-300/70">Figma · Design System · Acessibilidade</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE / MÉTODO -->
+  <section id="sobre" class="section">
+    <div class="wrap relative">
+      <div class="grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+        <div class="reveal min-w-0 lg:sticky lg:top-28">
+          <p class="eyebrow">Sobre a LEAF</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Software que cresce de forma orgânica.</h2>
+          <p class="mt-5 text-[17px] leading-relaxed text-mute">Somos uma software house focada em tecnologia e inovação. Trabalhamos como parte do seu time: entendemos o problema, desenhamos a solução e entregamos em ciclos curtos, sempre com algo funcionando para você testar.</p>
+          <p class="mt-4 text-[17px] leading-relaxed text-mute">O método LEAF une três princípios para que cada produto nasça rápido e continue saudável com o passar dos anos.</p>
+          <a href="#contato" class="btn btn-outline mt-8">Conversar com o time</a>
+        </div>
+        <div class="grid gap-5">
+          <article class="card glass reveal">
+            <div class="flex items-start gap-5">
+              <div class="icon-box shrink-0"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 13h6l-1 8 8-10h-6l1-8Z"/></svg></div>
+              <div class="min-w-0">
+                <h3 class="text-xl font-semibold">Ágil</h3>
+                <p class="mt-2 leading-relaxed text-mute">Ciclos de duas semanas com demonstração ao final de cada um. Você vê o progresso real e decide o próximo passo com dados na mão.</p>
+                <ul class="mt-4 space-y-1.5 text-sm text-zinc-300"><li class="flex gap-2"><span class="text-neon">&#8594;</span> Entregas incrementais e priorizadas</li><li class="flex gap-2"><span class="text-neon">&#8594;</span> Comunicação direta com quem desenvolve</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="card glass reveal">
+            <div class="flex items-start gap-5">
+              <div class="icon-box shrink-0"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+              <div class="min-w-0">
+                <h3 class="text-xl font-semibold">Escalável</h3>
+                <p class="mt-2 leading-relaxed text-mute">Arquitetura pensada para suportar mais usuários, mais dados e novas funcionalidades sem reescrever tudo.</p>
+                <ul class="mt-4 space-y-1.5 text-sm text-zinc-300"><li class="flex gap-2"><span class="text-neon">&#8594;</span> Módulos desacoplados e APIs bem definidas</li><li class="flex gap-2"><span class="text-neon">&#8594;</span> Infraestrutura que escala conforme a demanda</li></ul>
+              </div>
+            </div>
+          </article>
+          <article class="card glass reveal">
+            <div class="flex items-start gap-5">
+              <div class="icon-box shrink-0"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19C5 10 10 5 20 4c0 10-4 15-13 15"/><path d="M5 19 14 10"/></svg></div>
+              <div class="min-w-0">
+                <h3 class="text-xl font-semibold">Sustentável</h3>
+                <p class="mt-2 leading-relaxed text-mute">Código legível, testes automatizados e documentação viva. O produto continua fácil de manter, por nós ou por qualquer outro time.</p>
+                <ul class="mt-4 space-y-1.5 text-sm text-zinc-300"><li class="flex gap-2"><span class="text-neon">&#8594;</span> Cobertura de testes e revisão de código</li><li class="flex gap-2"><span class="text-neon">&#8594;</span> Repositório e acessos sempre em nome do cliente</li></ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="tecnologias" class="section">
+    <div class="wrap relative">
+      <div class="reveal mx-auto max-w-2xl text-center">
+        <p class="eyebrow">Nossa stack</p>
+        <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Ferramentas modernas, escolhidas com critério.</h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-mute">Usamos o que há de mais maduro no ecossistema e adotamos novidades quando elas resolvem um problema de verdade.</p>
+      </div>
+    </div>
+    <div class="relative mt-12 space-y-3">
+      <div class="marquee"><div class="track" id="row-a"></div></div>
+      <div class="marquee"><div class="track rev" id="row-b"></div></div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section id="portfolio" class="section">
+    <div class="wrap relative">
+      <div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Portfólio / Cases</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Produtos que saíram do papel.</h2>
+        </div>
+        <p class="max-w-sm text-sm text-mute">Exemplos ilustrativos do tipo de projeto que entregamos. Troque pelos seus cases reais.</p>
+      </div>
+      <div class="mt-12 grid gap-5 md:grid-cols-3">
+        <article class="card glass reveal !p-4">
+          <div class="case-art">
+            <svg viewBox="0 0 300 180" class="absolute inset-0 h-full w-full" aria-hidden="true"><g stroke="rgba(0,255,102,.5)" fill="none" stroke-width="1.4"><path d="M20 140 80 100 140 118 200 60 280 78"/><circle cx="80" cy="100" r="4" fill="#00FF66"/><circle cx="140" cy="118" r="4" fill="#00FF66"/><circle cx="200" cy="60" r="5" fill="#00FF66" style="filter:drop-shadow(0 0 6px #00FF66)"/><circle cx="280" cy="78" r="4" fill="#00FF66"/></g><g stroke="rgba(0,255,102,.12)"><path d="M0 150H300M0 110H300M0 70H300M0 30H300"/></g></svg>
+          </div>
+          <div class="p-3 pt-5">
+            <p class="font-mono text-[11px] uppercase tracking-widest text-emerald-300/70">Web · Logística</p>
+            <h3 class="mt-2 text-lg font-semibold">Painel de operações em tempo real</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mute">Acompanhamento de entregas e indicadores em uma única tela, com alertas automáticos.</p>
+          </div>
+        </article>
+        <article class="card glass reveal !p-4">
+          <div class="case-art">
+            <svg viewBox="0 0 300 180" class="absolute inset-0 h-full w-full" aria-hidden="true"><g fill="rgba(0,255,102,.08)" stroke="rgba(0,255,102,.5)" stroke-width="1.3"><rect x="100" y="22" width="100" height="136" rx="14"/><rect x="112" y="40" width="76" height="22" rx="6"/><rect x="112" y="72" width="76" height="22" rx="6"/><rect x="112" y="104" width="46" height="22" rx="6"/></g><circle cx="176" cy="115" r="6" fill="#00FF66" style="filter:drop-shadow(0 0 6px #00FF66)"/></svg>
+          </div>
+          <div class="p-3 pt-5">
+            <p class="font-mono text-[11px] uppercase tracking-widest text-emerald-300/70">Mobile · Varejo</p>
+            <h3 class="mt-2 text-lg font-semibold">Aplicativo de pedidos e fidelidade</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mute">App para iOS e Android com catálogo, pagamento e programa de pontos integrado.</p>
+          </div>
+        </article>
+        <article class="card glass reveal !p-4">
+          <div class="case-art">
+            <svg viewBox="0 0 300 180" class="absolute inset-0 h-full w-full" aria-hidden="true"><g fill="rgba(0,255,102,.08)" stroke="rgba(0,255,102,.5)" stroke-width="1.3"><rect x="40" y="40" width="130" height="30" rx="15"/><rect x="130" y="84" width="130" height="30" rx="15"/><rect x="40" y="128" width="90" height="30" rx="15"/></g><circle cx="58" cy="55" r="5" fill="#00FF66"/><circle cx="242" cy="99" r="5" fill="#00FF66" style="filter:drop-shadow(0 0 6px #00FF66)"/><circle cx="58" cy="143" r="5" fill="#00FF66"/></svg>
+          </div>
+          <div class="p-3 pt-5">
+            <p class="font-mono text-[11px] uppercase tracking-widest text-emerald-300/70">I.A. · Atendimento</p>
+            <h3 class="mt-2 text-lg font-semibold">Assistente virtual para suporte</h3>
+            <p class="mt-2 text-sm leading-relaxed text-mute">Respostas automáticas com base na documentação da empresa e transferência para humanos.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTATO -->
+  <section id="contato" class="section">
+    <div class="wrap relative">
+      <div class="relative overflow-hidden rounded-[28px] border border-emerald-500/25 p-6 sm:p-12" style="background: radial-gradient(900px 420px at 15% 0%, rgba(0,255,102,.14), transparent 60%), linear-gradient(160deg, #0A2E14 0%, #0B0F0C 60%); box-shadow: 0 0 90px rgba(0,255,102,.12)">
+        <div class="relative grid items-center gap-10 lg:grid-cols-[1fr_1fr]">
+          <div class="min-w-0 sm:pl-10">
+            <p class="eyebrow">Vamos conversar</p>
+            <h2 class="mt-3 text-3xl font-bold sm:text-5xl">Pronto para plantar o próximo produto?</h2>
+            <p class="mt-4 max-w-md text-[17px] leading-relaxed text-zinc-300/90">Conte sua ideia em poucas linhas. Respondemos com os próximos passos e uma estimativa inicial.</p>
+            <div class="mt-7 flex flex-col gap-3 text-sm sm:flex-row sm:items-center">
+              <a id="wa-direct" href="https://wa.me/5532991734996" class="btn btn-primary" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+              <span class="text-mute select-all">contato@leaf.dev.br</span>
+            </div>
+          </div>
+          <form id="contact" class="glass relative rounded-2xl p-5 sm:p-6" novalidate>
+            <div class="grid gap-4">
+              <div>
+                <label for="f-nome" class="mb-1.5 block text-sm text-zinc-300">Nome</label>
+                <input id="f-nome" class="field" type="text" autocomplete="name" placeholder="Como podemos te chamar?">
+              </div>
+              <div>
+                <label for="f-email" class="mb-1.5 block text-sm text-zinc-300">E-mail</label>
+                <input id="f-email" class="field" type="email" autocomplete="email" placeholder="voce@empresa.com">
+              </div>
+              <div>
+                <label for="f-msg" class="mb-1.5 block text-sm text-zinc-300">Sobre o projeto</label>
+                <textarea id="f-msg" class="field resize-y" rows="4" placeholder="O que você quer construir?"></textarea>
+              </div>
+              <a id="wa-send" class="btn btn-primary w-full" href="https://wa.me/5532991734996" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+              <p class="text-center text-xs text-mute">Ao clicar, abrimos o WhatsApp com a sua mensagem pronta.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-emerald-500/15">
+  <div class="wrap py-12">
+    <div class="flex flex-col justify-between gap-8 md:flex-row md:items-center">
+      <div class="flex items-center gap-2.5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00FF66" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19C5 10 10 5 20 4c0 10-4 15-13 15"/><path d="M5 19 14 10"/></svg>
+        <span class="font-display text-xl font-bold">LEAF</span>
+      </div>
+      <nav class="flex flex-wrap gap-x-7 gap-y-3" aria-label="Rodapé">
+        <a class="nav-link" href="#servicos">Serviços</a>
+        <a class="nav-link" href="#sobre">Sobre</a>
+        <a class="nav-link" href="#tecnologias">Tecnologias</a>
+        <a class="nav-link" href="#portfolio">Portfólio</a>
+        <a class="nav-link" href="#contato">Contato</a>
+      </nav>
+      <div class="flex gap-3">
+        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub" class="grid h-10 w-10 place-items-center rounded-xl border border-emerald-500/20 text-mute transition hover:border-neon/50 hover:text-neon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="grid h-10 w-10 place-items-center rounded-xl border border-emerald-500/20 text-mute transition hover:border-neon/50 hover:text-neon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="grid h-10 w-10 place-items-center rounded-xl border border-emerald-500/20 text-mute transition hover:border-neon/50 hover:text-neon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="mt-10 border-t border-emerald-500/10 pt-6 text-center text-sm text-mute">
+      <p>&copy; <span id="year">2026</span> - LEAF. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Ano do rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu móvel
+    var btn = document.getElementById('menu-btn'), menu = document.getElementById('menu');
+    btn.addEventListener('click', function () {
+      var open = menu.hidden;
+      menu.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); } });
+
+    // Abas do terminal
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    function selectTab(i) {
+      tabs.forEach(function (t, j) {
+        var on = i === j;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { selectTab(i); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          var n = (i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+          selectTab(n); tabs[n].focus();
+        }
+      });
+    });
+
+    // Glow que segue o cursor nos cards
+    document.querySelectorAll('.card').forEach(function (c) {
+      c.addEventListener('pointermove', function (e) {
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+
+    // Reveal ao rolar (apenas deslocamento; o conteúdo já está visível)
+    var rev = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !reduce) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      rev.forEach(function (el) { io.observe(el); });
+    } else { rev.forEach(function (el) { el.classList.add('in'); }); }
+
+    // Stack
+    var techs = [
+      ['React', 'Re'], ['Next.js', 'Nx'], ['TypeScript', 'TS'], ['Node.js', 'No'], ['Python', 'Py'], ['Tailwind CSS', 'Tw'],
+      ['PostgreSQL', 'Pg'], ['AWS', 'Aw'], ['Docker', 'Dk'], ['Terraform', 'Tf'], ['React Native', 'RN'], ['GraphQL', 'GQ'],
+      ['Redis', 'Rd'], ['FastAPI', 'Fa'], ['Figma', 'Fg'], ['Kubernetes', 'K8']
+    ];
+    function fill(id, list) {
+      var el = document.getElementById(id);
+      var html = function (hidden) {
+        return list.map(function (t) {
+          return '<div class="chip"' + (hidden ? ' aria-hidden="true"' : '') + '><span class="mono-badge">' + t[1] + '</span>' + t[0] + '</div>';
+        }).join('');
+      };
+      el.innerHTML = html(false) + html(true);
+    }
+    fill('row-a', techs.slice(0, 8).concat(techs.slice(8, 16)));
+    fill('row-b', techs.slice(8, 16).concat(techs.slice(0, 8)));
+
+    // WhatsApp com mensagem pronta (troque o número abaixo)
+    var WA_NUMBER = '5532991734996';
+    var nome = document.getElementById('f-nome'), email = document.getElementById('f-email'), msg = document.getElementById('f-msg');
+    var send = document.getElementById('wa-send');
+    function buildWa() {
+      var txt = 'Olá, LEAF! ' + (nome.value ? 'Meu nome é ' + nome.value + '. ' : '') +
+        (msg.value ? msg.value + ' ' : 'Gostaria de conversar sobre um projeto. ') +
+        (email.value ? '(E-mail: ' + email.value + ')' : '');
+      send.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(txt.trim());
+    }
+    ['input', 'change'].forEach(function (ev) { document.getElementById('contact').addEventListener(ev, buildWa); });
+    document.getElementById('contact').addEventListener('submit', function (e) { e.preventDefault(); });
+    document.getElementById('wa-direct').href = 'https://wa.me/' + WA_NUMBER;
+    buildWa();
+
+    // Matriz de código no fundo do hero
+    var cv = document.getElementById('matrix');
+    if (cv && !reduce) {
+      var ctx = cv.getContext('2d'), cols = [], size = 15, w = 0, h = 0, last = 0;
+      var chars = '01{}<>/;=()leaf'.split('');
+      function resize() {
+        var r = cv.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = r.width; h = r.height; cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        cols = []; for (var i = 0; i < Math.ceil(w / size); i++) cols.push(Math.random() * h / size);
+      }
+      resize(); window.addEventListener('resize', resize);
+      function frame(t) {
+        requestAnimationFrame(frame);
+        if (document.hidden || t - last < 70) return; last = t;
+        ctx.fillStyle = 'rgba(9,13,10,0.14)'; ctx.fillRect(0, 0, w, h);
+        ctx.font = size + 'px "JetBrains Mono", monospace'; ctx.fillStyle = '#00FF66';
+        for (var i = 0; i < cols.length; i++) {
+          ctx.fillText(chars[(Math.random() * chars.length) | 0], i * size, cols[i] * size);
+          if (cols[i] * size > h && Math.random() > 0.975) cols[i] = 0;
+          cols[i] += 1;
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+  })();
+</script>
+
+</body>
+</html>
